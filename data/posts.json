@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "title": "Cómo optimizar el rendimiento web en 2024",
+    "slug": "optimizar-rendimiento-web-2024",
+    "excerpt": "Descubre las mejores prácticas para hacer que tu sitio web cargue más rápido y ofrezca una mejor experiencia de usuario.",
+    "content": "<p>El rendimiento web es crucial para el éxito de cualquier sitio. Los usuarios esperan que las páginas carguen en menos de 3 segundos, y Google penaliza los sitios lentos en sus rankings.</p><h2>Core Web Vitals</h2><p>Los Core Web Vitals son métricas esenciales que Google utiliza para evaluar la experiencia del usuario:</p><ul><li><strong>LCP (Largest Contentful Paint):</strong> Debe ocurrir en menos de 2.5 segundos</li><li><strong>FID (First Input Delay):</strong> Debe ser menor a 100ms</li><li><strong>CLS (Cumulative Layout Shift):</strong> Debe ser menor a 0.1</li></ul><h2>Técnicas de Optimización</h2><p>Implementa lazy loading para imágenes, minimiza CSS y JavaScript, utiliza CDN para recursos estáticos, y optimiza el caché del navegador.</p>",
+    "image": "blog-1.jpg",
+    "category": "web",
+    "categoryName": "Desarrollo Web",
+    "date": "2024-10-02",
+    "author": "Enrique Contreras"
+  },
+  {
+    "id": 2,
+    "title": "Tendencias de diseño minimalista",
+    "slug": "tendencias-diseno-minimalista",
+    "excerpt": "El minimalismo sigue siendo una tendencia fuerte. Analizamos cómo aplicarlo correctamente en interfaces modernas.",
+    "content": "<p>El diseño minimalista no se trata solo de usar menos elementos, sino de usar los elementos correctos de manera efectiva.</p><h2>Principios del Minimalismo</h2><p>El minimalismo se basa en la simplicidad, la funcionalidad y la claridad visual. Cada elemento debe tener un propósito.</p><h2>Espacios en Blanco</h2><p>El uso estratégico del espacio negativo ayuda a dirigir la atención del usuario y crear jerarquía visual.</p><h2>Tipografía</h2><p>Usa fuentes limpias y legibles. Limita el número de familias tipográficas a 2-3 máximo.</p>",
+    "image": "blog-2.jpg",
+    "category": "design",
+    "categoryName": "Diseño UI/UX",
+    "date": "2024-09-25",
+    "author": "Enrique Contreras"
+  },
+  {
+    "id": 3,
+    "title": "Creando temas personalizados en WordPress",
+    "slug": "temas-personalizados-wordpress",
+    "excerpt": "Una guía paso a paso para desarrolladores que quieren ir más allá de los temas prefabricados.",
+    "content": "<p>Crear un tema de WordPress desde cero te da control total sobre el diseño y funcionalidad de tu sitio.</p><h2>Estructura Básica</h2><p>Un tema de WordPress requiere al menos dos archivos: style.css e index.php. Sin embargo, para un tema completo necesitarás muchos más.</p><h2>Template Hierarchy</h2><p>WordPress sigue una jerarquía de plantillas específica para determinar qué archivo usar para cada tipo de contenido.</p><h2>Functions.php</h2><p>Este archivo es el corazón de tu tema. Aquí registras menús, sidebars, y añades funcionalidad personalizada.</p>",
+    "image": "blog-3.jpg",
+    "category": "wordpress",
+    "categoryName": "WordPress",
+    "date": "2024-09-10",
+    "author": "Enrique Contreras"
+  },
+  {
+    "id": 4,
+    "title": "Diseño Responsive: Más allá del Mobile-First",
+    "slug": "diseno-responsive-mobile-first",
+    "excerpt": "Estrategias avanzadas para crear experiencias fluidas en todos los dispositivos y tamaños de pantalla.",
+    "content": "<p>El diseño responsive moderno va más allá de simplemente adaptar el contenido a pantallas pequeñas.</p><h2>Container Queries</h2><p>Las container queries permiten que los componentes respondan a su contenedor en lugar de al viewport.</p><h2>Fluid Typography</h2><p>Usa clamp() y funciones CSS para crear tipografía que escale suavemente entre breakpoints.</p>",
+    "image": "blog-4.jpg",
+    "category": "design",
+    "categoryName": "Diseño UI/UX",
+    "date": "2024-11-15",
+    "author": "Enrique Contreras"
+  },
+  {
+    "id": 5,
+    "title": "Implementando Chatbots con IA en tu Sitio Web",
+    "slug": "chatbots-ia-sitio-web",
+    "excerpt": "Guía completa para integrar asistentes virtuales inteligentes que mejoren la experiencia del usuario.",
+    "content": "<p>Los chatbots con IA pueden transformar la forma en que interactúas con tus usuarios, proporcionando soporte 24/7.</p><h2>Plataformas Populares</h2><p>Dialogflow, Rasa, y OpenAI GPT son algunas de las mejores opciones para crear chatbots inteligentes.</p><h2>Casos de Uso</h2><p>Atención al cliente, generación de leads, recomendaciones de productos, y automatización de tareas comunes.</p>",
+    "image": "blog-5.jpg",
+    "category": "web",
+    "categoryName": "Desarrollo Web",
+    "date": "2024-11-08",
+    "author": "Enrique Contreras"
+  },
+  {
+    "id": 6,
+    "title": "Core Web Vitals: Alcanzando 100/100 en PageSpeed",
+    "slug": "core-web-vitals-pagespeed",
+    "excerpt": "Técnicas probadas para optimizar LCP, FID y CLS y mejorar tu posicionamiento en Google.",
+    "content": "<p>Lograr una puntuación perfecta en PageSpeed Insights requiere optimización meticulosa de cada aspecto de tu sitio.</p><h2>Optimización de Imágenes</h2><p>Usa formatos modernos como WebP y AVIF, implementa lazy loading, y sirve imágenes responsive.</p><h2>JavaScript y CSS</h2><p>Minimiza, comprime y carga de forma asíncrona los recursos no críticos.</p>",
+    "image": "blog-6.jpg",
+    "category": "web",
+    "categoryName": "Desarrollo Web",
+    "date": "2024-11-01",
+    "author": "Enrique Contreras"
+  },
+  {
+    "id": 7,
+    "title": "Principios de UX que Todo Desarrollador Debe Conocer",
+    "slug": "principios-ux-desarrolladores",
+    "excerpt": "Cómo aplicar fundamentos de experiencia de usuario para crear interfaces intuitivas y efectivas.",
+    "content": "<p>Los desarrolladores que entienden UX crean mejores productos. Aquí están los principios fundamentales.</p><h2>Ley de Hick</h2><p>Cuantas más opciones ofrezcas, más tiempo tomará tomar una decisión. Simplifica las opciones.</p><h2>Feedback Visual</h2><p>Los usuarios necesitan confirmación inmediata de sus acciones. Usa estados hover, loading, y mensajes de éxito/error.</p>",
+    "image": "blog-7.jpg",
+    "category": "design",
+    "categoryName": "Diseño UI/UX",
+    "date": "2024-10-22",
+    "author": "Enrique Contreras"
+  },
+  {
+    "id": 8,
+    "title": "SEO para WordPress: Plugins y Mejores Prácticas",
+    "slug": "seo-wordpress-plugins",
+    "excerpt": "Optimiza tu sitio WordPress para motores de búsqueda con estas herramientas y técnicas esenciales.",
+    "content": "<p>WordPress es excelente para SEO out-of-the-box, pero con las herramientas correctas puedes llevarlo al siguiente nivel.</p><h2>Plugins Esenciales</h2><p>Yoast SEO o Rank Math para optimización on-page, WP Rocket para caché y rendimiento.</p><h2>Estructura de URLs</h2><p>Usa permalinks descriptivos y evita fechas en las URLs para contenido evergreen.</p>",
+    "image": "blog-8.jpg",
+    "category": "wordpress",
+    "categoryName": "WordPress",
+    "date": "2024-10-18",
+    "author": "Enrique Contreras"
+  },
+  {
+    "id": 9,
+    "title": "Seguridad Web: Protegiendo tu Sitio de Amenazas",
+    "slug": "seguridad-web-amenazas",
+    "excerpt": "Implementa medidas de seguridad esenciales para proteger tu aplicación web de ataques comunes.",
+    "content": "<p>La seguridad web no es opcional. Protege tu sitio y los datos de tus usuarios con estas prácticas.</p><h2>HTTPS</h2><p>Siempre usa HTTPS. Los certificados SSL son gratuitos con Let's Encrypt.</p><h2>Validación de Entrada</h2><p>Nunca confíes en los datos del usuario. Valida y sanitiza todas las entradas.</p><h2>Actualizaciones</h2><p>Mantén WordPress, plugins y temas actualizados para parchear vulnerabilidades conocidas.</p>",
+    "image": "blog-9.jpg",
+    "category": "web",
+    "categoryName": "Desarrollo Web",
+    "date": "2024-10-05",
+    "author": "Enrique Contreras"
+  },
+  {
+    "id": 10,
+    "title": "JavaScript Moderno: ES2024 y Nuevas Características",
+    "slug": "javascript-moderno-es2024",
+    "excerpt": "Explora las últimas funcionalidades de JavaScript y cómo pueden mejorar tu código.",
+    "content": "<p>JavaScript continúa evolucionando con nuevas características que hacen el código más limpio y eficiente.</p><h2>Temporal API</h2><p>Una nueva API para trabajar con fechas y horas que reemplaza el problemático objeto Date.</p><h2>Pattern Matching</h2><p>Propuesta para añadir pattern matching nativo a JavaScript, similar a otros lenguajes modernos.</p><h2>Records y Tuples</h2><p>Estructuras de datos inmutables nativas que mejoran la predictibilidad del código.</p>",
+    "image": "blog-10.svg",
+    "category": "web",
+    "categoryName": "Desarrollo Web",
+    "date": "2024-09-28",
+    "author": "Enrique Contreras"
+  }
+]

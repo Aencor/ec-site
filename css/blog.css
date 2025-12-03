@@ -1,0 +1,113 @@
+/* Custom styles for Slick Slider in dark theme */
+.related-posts-slider .slick-dots {
+  bottom: -40px;
+}
+
+.related-posts-slider .slick-dots li button:before {
+  color: #64748b;
+  font-size: 10px;
+}
+
+.related-posts-slider .slick-dots li.slick-active button:before {
+  color: #ef4444;
+}
+
+.related-posts-slider .slick-prev,
+.related-posts-slider .slick-next {
+  width: 40px;
+  height: 40px;
+  z-index: 10;
+}
+
+.related-posts-slider .slick-prev {
+  left: -50px;
+}
+
+.related-posts-slider .slick-next {
+  right: -50px;
+}
+
+.related-posts-slider .slick-prev:before,
+.related-posts-slider .slick-next:before {
+  font-size: 40px;
+  color: #ef4444;
+  opacity: 0.75;
+}
+
+.related-posts-slider .slick-prev:hover:before,
+.related-posts-slider .slick-next:hover:before {
+  opacity: 1;
+}
+
+@media (max-width: 1024px) {
+  .related-posts-slider .slick-prev {
+    left: -25px;
+  }
+  
+  .related-posts-slider .slick-next {
+    right: -25px;
+  }
+}
+
+@media (max-width: 640px) {
+  .related-posts-slider .slick-prev {
+    left: 10px;
+  }
+  
+  .related-posts-slider .slick-next {
+    right: 10px;
+  }
+}
+
+/* Prose styling for blog content */
+.prose h2 {
+  color: #f1f5f9;
+  font-size: 1.875rem;
+  font-weight: 700;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.prose h3 {
+  color: #f1f5f9;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.prose p {
+  margin-bottom: 1.5rem;
+  line-height: 1.75;
+}
+
+.prose ul, .prose ol {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+}
+
+.prose strong {
+  color: #f1f5f9;
+  font-weight: 600;
+}
+
+.prose code {
+  background-color: #1e293b;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  color: #ef4444;
+}
+
+.prose blockquote {
+  border-left: 4px solid #ef4444;
+  padding-left: 1.5rem;
+  font-style: italic;
+  color: #f1f5f9;
+  margin: 2rem 0;
+}

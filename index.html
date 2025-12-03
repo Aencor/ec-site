@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrique Contreras | Portfolio & Blog</title>
+    <meta name="description" content="Portafolio profesional y blog de Enrique Contreras. Desarrollo web, diseño y tecnología.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Slick Slider CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        slate: {
+                            850: '#151f32', // Custom slightly darker slate
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Slick Slider Overrides for Tailwind Red Theme */
+        .slick-dots li button:before { color: #94a3b8; }
+        .slick-dots li.slick-active button:before { color: #ef4444; }
+        /* Arrows are custom handled in JS */
+        
+        /* Custom Animations */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Stagger delays */
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+    </style>
+</head>
+<body class="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-50 font-sans antialiased transition-colors duration-300">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-700 transition-colors duration-300">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-extrabold tracking-tight">Enrique <span class="text-red-500">Contreras</span></a>
+            
+            <div class="flex items-center gap-4">
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xl" aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon dark:hidden text-slate-600"></i>
+                    <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
+                </button>
+
+                <button class="mobile-menu-toggle md:hidden text-2xl focus:outline-none" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <nav class="main-nav hidden md:block absolute md:static top-full left-0 w-full md:w-auto bg-white dark:bg-slate-800 md:bg-transparent border-b md:border-none border-slate-200 dark:border-slate-700 p-4 md:p-0 shadow-lg md:shadow-none">
+                <ul class="flex flex-col md:flex-row gap-4 md:gap-8 text-center md:text-left">
+                    <li><a href="#hero" class="px-4 py-2 bg-red-600 text-white rounded-full font-medium text-lg transition-all shadow-md hover:bg-red-700">Inicio</a></li>
+                    <li><a href="#about" class="px-4 py-2 text-slate-600 dark:text-slate-400 hover:text-red-500 dark:hover:text-red-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full font-medium text-lg transition-all">Acerca de</a></li>
+                    <li><a href="#services" class="px-4 py-2 text-slate-600 dark:text-slate-400 hover:text-red-500 dark:hover:text-red-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full font-medium text-lg transition-all">Servicios</a></li>
+                    <li><a href="#portfolio" class="px-4 py-2 text-slate-600 dark:text-slate-400 hover:text-red-500 dark:hover:text-red-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full font-medium text-lg transition-all">Portafolio</a></li>
+                    <li><a href="blog.html" class="px-4 py-2 text-slate-600 dark:text-slate-400 hover:text-red-500 dark:hover:text-red-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full font-medium text-lg transition-all">Blog</a></li>
+                    <li><a href="#contact" class="px-4 py-2 text-slate-600 dark:text-slate-400 hover:text-red-500 dark:hover:text-red-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full font-medium text-lg transition-all">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative h-screen min-h-[800px] flex items-center justify-center overflow-hidden fade-in-up">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="images/profile.jpg" alt="Enrique Contreras" class="w-full h-full object-cover object-center">
+                <div class="absolute inset-0 bg-slate-900/80 dark:bg-slate-950/80 mix-blend-multiply"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-transparent to-slate-900/50"></div>
+            </div>
+
+            <div class="container mx-auto px-4 relative z-10 text-center">
+                <h1 class="text-6xl md:text-8xl font-extrabold mb-6 leading-tight text-white tracking-tight">
+                    Hola, soy <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-orange-500">Enrique Contreras</span>
+                </h1>
+                <p class="text-2xl md:text-3xl text-slate-300 mb-10 font-medium max-w-3xl mx-auto leading-relaxed">
+                    Desarrollador Web & Creativo Digital. <br>
+                    <span class="text-slate-400 text-xl md:text-2xl">Transformo ideas en experiencias digitales de alto impacto.</span>
+                </p>
+                
+                <div class="flex flex-col md:flex-row gap-6 justify-center items-center mb-12">
+                    <a href="#portfolio" class="px-10 py-5 bg-red-600 hover:bg-red-700 text-white font-bold text-xl rounded-full transition-all shadow-lg hover:shadow-red-500/40 hover:-translate-y-1">
+                        Ver Portafolio
+                    </a>
+                    <a href="#contact" class="px-10 py-5 border-2 border-white/20 hover:border-white text-white font-bold text-xl rounded-full transition-all hover:bg-white/10 backdrop-blur-sm">
+                        Contáctame
+                    </a>
+                </div>
+
+                <!-- Social Links -->
+                <div class="flex justify-center gap-8">
+                    <a href="https://www.linkedin.com/in/alberto-enrique-contreras-romero/" target="_blank" class="text-slate-400 hover:text-white transition-colors transform hover:scale-110">
+                        <i class="fa-brands fa-linkedin text-4xl"></i>
+                    </a>
+                    <a href="https://github.com/Aencor/" target="_blank" class="text-slate-400 hover:text-white transition-colors transform hover:scale-110">
+                        <i class="fa-brands fa-github text-4xl"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@kikemonk" target="_blank" class="text-slate-400 hover:text-white transition-colors transform hover:scale-110">
+                        <i class="fa-brands fa-tiktok text-4xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/kikemonk" target="_blank" class="text-slate-400 hover:text-white transition-colors transform hover:scale-110">
+                        <i class="fa-brands fa-instagram text-4xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Scroll Down Indicator -->
+            <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <a href="#about" class="text-white/50 hover:text-white transition-colors">
+                    <i class="fa-solid fa-chevron-down text-3xl"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-32 bg-slate-50 dark:bg-slate-800/50 fade-in-up">
+            <div class="container mx-auto px-4">
+                <h2 class="text-5xl font-bold text-center mb-16">Acerca de mí</h2>
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div class="text-xl text-slate-600 dark:text-slate-400 space-y-6 leading-relaxed">
+                        <p>FullStack Developer con 15 años de experiencia especializándome en WordPress, PHP y frameworks de PHP. Tengo un historial comprobado desarrollando temas y plugins de alta calidad desde cero, con un fuerte enfoque en UX y UI.</p>
+                        <p>Mi experiencia incluye optimización SEO, accesibilidad y rendimiento web. Me apasiona crear soluciones digitales que no solo funcionan bien, sino que también ofrecen una experiencia de usuario excepcional.</p>
+                    </div>
+                    <div class="grid grid-cols-3 gap-6">
+                        <div class="bg-white dark:bg-slate-800 p-8 rounded-xl text-center border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl hover:border-red-500 dark:hover:border-red-500 hover:-translate-y-2 transition-all duration-300 delay-100">
+                            <i class="fa-solid fa-code text-5xl text-red-500 mb-4 block"></i>
+                            <span class="block text-4xl font-extrabold text-slate-900 dark:text-white">15+</span>
+                            <span class="text-base text-slate-500 dark:text-slate-400">Años de Exp.</span>
+                        </div>
+                        <div class="bg-white dark:bg-slate-800 p-8 rounded-xl text-center border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl hover:border-red-500 dark:hover:border-red-500 hover:-translate-y-2 transition-all duration-300 delay-200">
+                            <i class="fa-solid fa-layer-group text-5xl text-red-500 mb-4 block"></i>
+                            <span class="block text-4xl font-extrabold text-slate-900 dark:text-white">50+</span>
+                            <span class="text-base text-slate-500 dark:text-slate-400">Proyectos</span>
+                        </div>
+                        <div class="bg-white dark:bg-slate-800 p-8 rounded-xl text-center border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-xl hover:border-red-500 dark:hover:border-red-500 hover:-translate-y-2 transition-all duration-300 delay-300">
+                            <i class="fa-solid fa-heart text-5xl text-red-500 mb-4 block"></i>
+                            <span class="block text-4xl font-extrabold text-slate-900 dark:text-white">100%</span>
+                            <span class="text-base text-slate-500 dark:text-slate-400">Compromiso</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-32 bg-white dark:bg-slate-900 fade-in-up">
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col lg:flex-row gap-16">
+                    <!-- Left Column: Sticky Title -->
+                    <div class="lg:w-1/3">
+                        <div class="sticky top-32">
+                            <h2 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-slate-900 dark:text-white">
+                                Soluciones que <br>
+                                <span class="text-red-500">impulsan</span> tu negocio.
+                            </h2>
+                            <p class="text-xl text-slate-600 dark:text-slate-400 mb-8">
+                                Estrategias digitales integrales diseñadas para el crecimiento.
+                            </p>
+                            <a href="#contact" class="inline-block px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold text-lg rounded-md hover:bg-red-600 dark:hover:bg-red-500 hover:text-white transition-colors">
+                                Cotizar Proyecto
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Accordion -->
+                    <div class="lg:w-2/3">
+                        <div class="space-y-6" id="services-accordion">
+                            <!-- Service 1 -->
+                            <div class="service-item border-b border-slate-200 dark:border-slate-700 pb-6 group">
+                                <button class="w-full flex justify-between items-center text-left focus:outline-none service-header" aria-expanded="true">
+                                    <span class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white group-hover:text-red-500 transition-colors">Desarrollo Web</span>
+                                    <i class="fa-solid fa-plus text-2xl text-slate-400 group-hover:text-red-500 transition-colors transform duration-300"></i>
+                                </button>
+                                <div class="service-content mt-4 overflow-hidden transition-all duration-300 max-h-[500px] opacity-100">
+                                    <p class="text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
+                                        Sitios web modernos, rápidos y totalmente responsivos. Desde landing pages hasta aplicaciones web complejas, construyo soluciones a medida utilizando las últimas tecnologías (React, WordPress, Tailwind).
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Service 1.5: Web Optimization -->
+                            <div class="service-item border-b border-slate-200 dark:border-slate-700 pb-6 group">
+                                <button class="w-full flex justify-between items-center text-left focus:outline-none service-header" aria-expanded="false">
+                                    <span class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white group-hover:text-red-500 transition-colors">Optimización Web</span>
+                                    <i class="fa-solid fa-plus text-2xl text-slate-400 group-hover:text-red-500 transition-colors transform duration-300"></i>
+                                </button>
+                                <div class="service-content mt-4 overflow-hidden transition-all duration-300 max-h-0 opacity-0">
+                                    <p class="text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
+                                        Auditoría y mejora de Core Web Vitals. Optimizo la velocidad de carga (PageSpeed), reduzco el peso de recursos y mejoro la estructura de código para garantizar un rendimiento de 100/100.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Service 2 -->
+                            <div class="service-item border-b border-slate-200 dark:border-slate-700 pb-6 group">
+                                <button class="w-full flex justify-between items-center text-left focus:outline-none service-header" aria-expanded="false">
+                                    <span class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white group-hover:text-red-500 transition-colors">Posicionamiento SEO</span>
+                                    <i class="fa-solid fa-plus text-2xl text-slate-400 group-hover:text-red-500 transition-colors transform duration-300"></i>
+                                </button>
+                                <div class="service-content mt-4 overflow-hidden transition-all duration-300 max-h-0 opacity-0">
+                                    <p class="text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
+                                        Mejora tu visibilidad en Google y atrae tráfico orgánico de calidad. Auditorías técnicas, optimización on-page y estrategias de contenido para posicionarte por encima de tu competencia.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Service 3 -->
+                            <div class="service-item border-b border-slate-200 dark:border-slate-700 pb-6 group">
+                                <button class="w-full flex justify-between items-center text-left focus:outline-none service-header" aria-expanded="false">
+                                    <span class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white group-hover:text-red-500 transition-colors">Asesorías y Clases</span>
+                                    <i class="fa-solid fa-plus text-2xl text-slate-400 group-hover:text-red-500 transition-colors transform duration-300"></i>
+                                </button>
+                                <div class="service-content mt-4 overflow-hidden transition-all duration-300 max-h-0 opacity-0">
+                                    <p class="text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
+                                        ¿Quieres aprender a programar o mejorar tus habilidades? Ofrezco mentorías personalizadas en desarrollo web, WordPress y buenas prácticas de código para todos los niveles.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Service 4 -->
+                            <div class="service-item border-b border-slate-200 dark:border-slate-700 pb-6 group">
+                                <button class="w-full flex justify-between items-center text-left focus:outline-none service-header" aria-expanded="false">
+                                    <span class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white group-hover:text-red-500 transition-colors">Marketing Digital</span>
+                                    <i class="fa-solid fa-plus text-2xl text-slate-400 group-hover:text-red-500 transition-colors transform duration-300"></i>
+                                </button>
+                                <div class="service-content mt-4 overflow-hidden transition-all duration-300 max-h-0 opacity-0">
+                                    <p class="text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
+                                        Estrategias integrales para crecer tu marca. Gestión de campañas, email marketing y análisis de datos para maximizar tu retorno de inversión y conectar con tu audiencia.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Service 5 -->
+                            <div class="service-item border-b border-slate-200 dark:border-slate-700 pb-6 group">
+                                <button class="w-full flex justify-between items-center text-left focus:outline-none service-header" aria-expanded="false">
+                                    <span class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white group-hover:text-red-500 transition-colors">Chatbots para tu negocio</span>
+                                    <i class="fa-solid fa-plus text-2xl text-slate-400 group-hover:text-red-500 transition-colors transform duration-300"></i>
+                                </button>
+                                <div class="service-content mt-4 overflow-hidden transition-all duration-300 max-h-0 opacity-0">
+                                    <p class="text-xl text-slate-600 dark:text-slate-400 leading-relaxed">
+                                        Automatiza la atención al cliente y aumenta tus ventas 24/7. Implementación de chatbots inteligentes con IA que responden dudas frecuentes y capturan leads automáticamente.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="py-32 fade-in-up">
+            <div class="container mx-auto px-4">
+                <h2 class="text-5xl font-bold text-center mb-16">Mi Trabajo</h2>
+                <div class="portfolio-slider px-4">
+                    <!-- Project 1: TelemetryHub -->
+                    <article class="mx-4 bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <a href="https://telemetryhub.com/" target="_blank" class="block h-56 bg-black overflow-hidden relative group">
+                            <img src="images/portfolio-telemetryhub.png" alt="TelemetryHub" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span class="text-white font-bold text-lg">Ver Detalles</span>
+                            </div>
+                        </a>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-3 text-slate-900 dark:text-white">TelemetryHub</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-base mb-6">Plataforma de observabilidad y monitoreo.</p>
+                            <a href="https://telemetryhub.com/" target="_blank" class="inline-block px-6 py-2 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 font-bold rounded-full hover:bg-red-200 dark:hover:bg-red-900/50 transition-colors">Visitar Sitio →</a>
+                        </div>
+                    </article>
+                    <!-- Project 2: ThreatX -->
+                    <article class="mx-4 bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <a href="https://threatx.com/" target="_blank" class="block h-56 bg-black overflow-hidden relative group">
+                            <img src="images/portfolio-threatx.png" alt="ThreatX" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span class="text-white font-bold text-lg">Ver Detalles</span>
+                            </div>
+                        </a>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-3 text-slate-900 dark:text-white">ThreatX</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-base mb-6">Seguridad para APIs y Aplicaciones Web.</p>
+                            <a href="https://threatx.com/" target="_blank" class="inline-block px-6 py-2 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 font-bold rounded-full hover:bg-red-200 dark:hover:bg-red-900/50 transition-colors">Visitar Sitio →</a>
+                        </div>
+                    </article>
+                    <!-- Project 3: Husl Digital -->
+                    <article class="mx-4 bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <a href="https://husldigital.com/" target="_blank" class="block h-56 bg-black overflow-hidden relative group">
+                            <img src="images/portfolio-husldigital.png" alt="Husl Digital" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span class="text-white font-bold text-lg">Ver Detalles</span>
+                            </div>
+                        </a>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-3 text-slate-900 dark:text-white">Husl Digital</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-base mb-6">Agencia digital creativa y desarrollo web.</p>
+                            <a href="https://husldigital.com/" target="_blank" class="inline-block px-6 py-2 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 font-bold rounded-full hover:bg-red-200 dark:hover:bg-red-900/50 transition-colors">Visitar Sitio →</a>
+                        </div>
+                    </article>
+                    <!-- Project 4: AJ Tutoring -->
+                    <article class="mx-4 bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <a href="https://www.ajtutoring.com/" target="_blank" class="block h-56 bg-black overflow-hidden relative group">
+                            <img src="images/portfolio-ajtutoring.png" alt="AJ Tutoring" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span class="text-white font-bold text-lg">Ver Detalles</span>
+                            </div>
+                        </a>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-3 text-slate-900 dark:text-white">AJ Tutoring</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-base mb-6">Tutoría privada y consejería universitaria.</p>
+                            <a href="https://www.ajtutoring.com/" target="_blank" class="inline-block px-6 py-2 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 font-bold rounded-full hover:bg-red-200 dark:hover:bg-red-900/50 transition-colors">Visitar Sitio →</a>
+                        </div>
+                    </article>
+                    <!-- Project 5: Accelity Marketing -->
+                    <article class="mx-4 bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <a href="https://accelitymarketing.com/" target="_blank" class="block h-56 bg-black overflow-hidden relative group">
+                            <img src="images/portfolio-accelity.png" alt="Accelity Marketing" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span class="text-white font-bold text-lg">Ver Detalles</span>
+                            </div>
+                        </a>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-3 text-slate-900 dark:text-white">Accelity Marketing</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-base mb-6">Agencia de marketing digital B2B.</p>
+                            <a href="https://accelitymarketing.com/" target="_blank" class="inline-block px-6 py-2 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 font-bold rounded-full hover:bg-red-200 dark:hover:bg-red-900/50 transition-colors">Visitar Sitio →</a>
+                        </div>
+                    </article>
+                    <!-- Project 6: Vector Solutions -->
+                    <article class="mx-4 bg-white dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300">
+                        <a href="https://www.vectorsolutions.com/" target="_blank" class="block h-56 bg-black overflow-hidden relative group">
+                            <img src="images/portfolio-vectorsolutions.png" alt="Vector Solutions" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                            <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <span class="text-white font-bold text-lg">Ver Detalles</span>
+                            </div>
+                        </a>
+                        <div class="p-8">
+                            <h3 class="text-2xl font-bold mb-3 text-slate-900 dark:text-white">Vector Solutions</h3>
+                            <p class="text-slate-600 dark:text-slate-400 text-base mb-6">Soluciones de capacitación y gestión laboral.</p>
+                            <a href="https://www.vectorsolutions.com/" target="_blank" class="inline-block px-6 py-2 bg-red-100 dark:bg-red-900/30 text-red-600 dark:text-red-400 font-bold rounded-full hover:bg-red-200 dark:hover:bg-red-900/50 transition-colors">Visitar Sitio →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-32 bg-slate-50 dark:bg-slate-800/50 fade-in-up relative overflow-hidden">
+            <!-- Animated Background -->
+            <canvas id="contact-canvas" class="absolute inset-0 w-full h-full opacity-30 pointer-events-none"></canvas>
+            
+            <div class="container mx-auto px-4 relative z-10">
+                <h2 class="text-5xl font-bold text-center mb-16">Contáctame</h2>
+                <div class="max-w-2xl mx-auto">
+                    <form class="bg-white dark:bg-slate-800 p-10 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-2xl" action="#" method="POST">
+                        <div class="mb-8">
+                            <label for="name" class="block mb-3 font-bold text-lg">Nombre</label>
+                            <input type="text" id="name" name="name" required class="w-full px-6 py-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/50 transition-all">
+                        </div>
+                        <div class="mb-8">
+                            <label for="email" class="block mb-3 font-bold text-lg">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full px-6 py-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/50 transition-all">
+                        </div>
+                        <div class="mb-8">
+                            <label for="message" class="block mb-3 font-bold text-lg">Mensaje</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full px-6 py-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/50 transition-all"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 bg-red-600 hover:bg-red-700 text-white font-bold text-xl rounded-lg transition-all shadow-lg hover:shadow-red-500/30 transform hover:-translate-y-1">Enviar Mensaje</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white dark:bg-slate-800 py-16 mt-16 border-t border-slate-200 dark:border-slate-700 text-center text-slate-500 dark:text-slate-400">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-center gap-8 mb-8">
+                <a href="https://www.linkedin.com/in/alberto-enrique-contreras-romero/" target="_blank" class="text-slate-400 hover:text-red-500 transition-colors transform hover:scale-110">
+                    <i class="fa-brands fa-linkedin text-3xl"></i>
+                </a>
+                <a href="https://github.com/Aencor/" target="_blank" class="text-slate-400 hover:text-red-500 transition-colors transform hover:scale-110">
+                    <i class="fa-brands fa-github text-3xl"></i>
+                </a>
+                <a href="https://www.tiktok.com/@kikemonk" target="_blank" class="text-slate-400 hover:text-red-500 transition-colors transform hover:scale-110">
+                    <i class="fa-brands fa-tiktok text-3xl"></i>
+                </a>
+                <a href="https://www.instagram.com/kikemonk" target="_blank" class="text-slate-400 hover:text-red-500 transition-colors transform hover:scale-110">
+                    <i class="fa-brands fa-instagram text-3xl"></i>
+                </a>
+            </div>
+            <p class="text-lg">&copy; 2024 Enrique Contreras. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- jQuery (Required for Slick) -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Slick Slider JS -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- GSAP -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
