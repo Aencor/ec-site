@@ -149,14 +149,14 @@ function loadPosts() {
 
 function createPostCard(post) {
   return `
-        <article class="blog-card flex flex-col bg-slate-800 rounded-lg overflow-hidden border border-slate-700 hover:-translate-y-1 transition-transform duration-300" data-category="${post.category}">
+        <article class="blog-card flex flex-col bg-white dark:bg-slate-800 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700 hover:-translate-y-1 transition-transform duration-300" data-category="${post.category}">
             <img src="images/${post.image}" alt="${post.title}" class="h-48 w-full object-cover">
             <div class="p-6 flex flex-col flex-grow">
-                <div class="text-sm text-slate-400 mb-2">
+                <div class="text-sm text-slate-500 dark:text-slate-400 mb-2">
                     <span>${new Date(post.date).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' })}</span> • <span class="text-red-500 font-medium">${post.categoryName}</span>
                 </div>
-                <h2 class="text-xl font-bold mb-3 leading-tight"><a href="single.html?id=${post.id}" class="hover:text-red-500 transition-colors">${post.title}</a></h2>
-                <p class="text-slate-400 text-sm mb-6 flex-grow">${post.excerpt}</p>
+                <h2 class="text-xl font-bold mb-3 leading-tight text-slate-900 dark:text-white"><a href="single.html?id=${post.id}" class="hover:text-red-500 transition-colors">${post.title}</a></h2>
+                <p class="text-slate-600 dark:text-slate-400 text-sm mb-6 flex-grow">${post.excerpt}</p>
                 <a href="single.html?id=${post.id}" class="inline-block px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors text-sm mt-auto w-max font-medium">Leer más →</a>
             </div>
         </article>
@@ -266,10 +266,10 @@ async function initBlog() {
         // Remove active classes from all buttons
         filterBtns.forEach(b => {
           b.classList.remove('bg-red-600', 'text-white', 'border-red-600');
-          b.classList.add('text-slate-400', 'border-slate-700');
+          b.classList.add('text-slate-600', 'dark:text-slate-400', 'border-slate-300', 'dark:border-slate-700');
         });
         // Add active classes to clicked button
-        btn.classList.remove('text-slate-400', 'border-slate-700');
+        btn.classList.remove('text-slate-600', 'dark:text-slate-400', 'border-slate-300', 'dark:border-slate-700');
         btn.classList.add('bg-red-600', 'text-white', 'border-red-600');
 
         const filterValue = btn.getAttribute('data-filter');
@@ -359,7 +359,7 @@ async function initSinglePost() {
   const postTags = document.getElementById('post-tags');
   if (postTags && post.tags) {
     postTags.innerHTML = post.tags.map(tag =>
-      `<span class="px-3 py-1 bg-slate-800 text-slate-300 rounded-full text-sm border border-slate-700 hover:border-red-500 transition-colors">${tag}</span>`
+      `<span class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-full text-sm border border-slate-300 dark:border-slate-700 hover:border-red-500 transition-colors">${tag}</span>`
     ).join('');
   }
 
@@ -376,16 +376,16 @@ async function initSinglePost() {
   if (relatedPostsCarousel && relatedPosts.length > 0) {
     relatedPostsCarousel.innerHTML = relatedPosts.map(relatedPost => `
       <div class="px-3">
-        <article class="bg-slate-800 rounded-lg overflow-hidden border border-slate-700 hover:-translate-y-1 transition-transform duration-300">
+        <article class="bg-white dark:bg-slate-800 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700 hover:-translate-y-1 transition-transform duration-300">
           <img src="images/${relatedPost.image}" alt="${relatedPost.title}" class="w-full h-48 object-cover">
           <div class="p-6">
-            <div class="text-sm text-slate-400 mb-2">
+            <div class="text-sm text-slate-500 dark:text-slate-400 mb-2">
               <span>${new Date(relatedPost.date).toLocaleDateString('es-ES', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
             </div>
-            <h3 class="text-lg font-bold mb-3 leading-tight">
+            <h3 class="text-lg font-bold mb-3 leading-tight text-slate-900 dark:text-white">
               <a href="single.html?id=${relatedPost.id}" class="hover:text-red-500 transition-colors">${relatedPost.title}</a>
             </h3>
-            <p class="text-slate-400 text-sm mb-4">${relatedPost.excerpt.substring(0, 100)}...</p>
+            <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">${relatedPost.excerpt.substring(0, 100)}...</p>
             <a href="single.html?id=${relatedPost.id}" class="inline-block px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors text-sm font-medium">Leer más →</a>
           </div>
         </article>

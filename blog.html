@@ -14,6 +14,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
+            darkMode: 'class',
             theme: {
                 extend: {
                     colors: {
@@ -32,23 +33,31 @@
         .fade-in { opacity: 1 !important; transform: translateY(0) !important; }
     </style>
 </head>
-<body class="bg-slate-900 text-slate-50 font-sans antialiased">
+<body class="bg-white dark:bg-slate-900 text-slate-900 dark:text-slate-50 font-sans antialiased transition-colors duration-300">
 
     <!-- Header -->
-    <header class="fixed w-full top-0 z-50 bg-slate-900/90 backdrop-blur-md border-b border-slate-700">
+    <header class="fixed w-full top-0 z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border-b border-slate-200 dark:border-slate-700 transition-colors duration-300">
         <div class="container mx-auto px-4 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-extrabold tracking-tight">Enrique <span class="text-red-500">Contreras</span></a>
             
-            <button class="mobile-menu-toggle lg:hidden text-2xl focus:outline-none" aria-label="Toggle menu">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+            <div class="flex items-center gap-4">
+                <!-- Theme Toggle -->
+                <button id="theme-toggle" class="p-2 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors text-xl" aria-label="Toggle Dark Mode">
+                    <i class="fa-solid fa-moon dark:hidden text-slate-600"></i>
+                    <i class="fa-solid fa-sun hidden dark:block text-yellow-400"></i>
+                </button>
 
-            <nav class="main-nav hidden lg:block absolute lg:static top-full left-0 w-full lg:w-auto bg-slate-800 lg:bg-transparent border-b lg:border-none border-slate-700 p-4 lg:p-0">
+                <button class="mobile-menu-toggle lg:hidden text-2xl focus:outline-none" aria-label="Toggle menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+
+            <nav class="main-nav hidden lg:block absolute lg:static top-full left-0 w-full lg:w-auto bg-white dark:bg-slate-800 lg:bg-transparent border-b lg:border-none border-slate-200 dark:border-slate-700 p-4 lg:p-0">
                 <ul class="flex flex-col lg:flex-row gap-4 lg:gap-8 text-center lg:text-left">
-                    <li><a href="index.html" class="px-4 py-2 text-slate-400 hover:text-red-500 text-sm lg:text-md hover:bg-slate-800 rounded-full font-medium transition-all">Inicio</a></li>
-                    <li><a href="index.html#about" class="px-4 py-2 text-slate-400 hover:text-red-500 text-sm lg:text-md hover:bg-slate-800 rounded-full font-medium transition-all">Acerca de</a></li>
-                    <li><a href="index.html#services" class="px-4 py-2 text-slate-400 hover:text-red-500 text-sm lg:text-md hover:bg-slate-800 rounded-full font-medium transition-all">Servicios</a></li>
-                    <li><a href="index.html#portfolio" class="px-4 py-2 text-slate-400 hover:text-red-500 text-sm lg:text-md hover:bg-slate-800 rounded-full font-medium transition-all">Portafolio</a></li>
+                    <li><a href="index.html" class="px-4 py-2 text-slate-600 dark:text-slate-400 hover:text-red-500 dark:hover:text-red-500 text-sm lg:text-md hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full font-medium transition-all">Inicio</a></li>
+                    <li><a href="index.html#about" class="px-4 py-2 text-slate-600 dark:text-slate-400 hover:text-red-500 dark:hover:text-red-500 text-sm lg:text-md hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full font-medium transition-all">Acerca de</a></li>
+                    <li><a href="index.html#services" class="px-4 py-2 text-slate-600 dark:text-slate-400 hover:text-red-500 dark:hover:text-red-500 text-sm lg:text-md hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full font-medium transition-all">Servicios</a></li>
+                    <li><a href="index.html#portfolio" class="px-4 py-2 text-slate-600 dark:text-slate-400 hover:text-red-500 dark:hover:text-red-500 text-sm lg:text-md hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full font-medium transition-all">Portafolio</a></li>
                     <li><a href="blog.html" class="px-4 py-2 bg-red-600 text-white rounded-full font-medium transition-all shadow-md hover:bg-red-700">Blog</a></li>
                     <li><a href="index.html#contact" class="font-bold px-4 py-2 text-slate-600 dark:text-white uppercase hover:text-red-500 dark:hover:text-red-500 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-full font-medium text-lg transition-all">Contacto</a></li>
                 </ul>
@@ -74,9 +83,9 @@
             <!-- Blog Filters -->
             <div class="flex justify-center flex-wrap gap-2 mb-12">
                 <button class="filter-btn px-4 py-2 rounded-full border bg-red-600 text-white border-red-600 transition-all" data-filter="all">Todos</button>
-                <button class="filter-btn px-4 py-2 rounded-full border border-slate-700 text-slate-400 hover:bg-red-600 hover:text-white hover:border-red-600 transition-all" data-filter="web">Desarrollo Web</button>
-                <button class="filter-btn px-4 py-2 rounded-full border border-slate-700 text-slate-400 hover:bg-red-600 hover:text-white hover:border-red-600 transition-all" data-filter="design">Diseño UI/UX</button>
-                <button class="filter-btn px-4 py-2 rounded-full border border-slate-700 text-slate-400 hover:bg-red-600 hover:text-white hover:border-red-600 transition-all" data-filter="wordpress">WordPress</button>
+                <button class="filter-btn px-4 py-2 rounded-full border border-slate-300 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-red-600 hover:text-white hover:border-red-600 transition-all" data-filter="web">Desarrollo Web</button>
+                <button class="filter-btn px-4 py-2 rounded-full border border-slate-300 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-red-600 hover:text-white hover:border-red-600 transition-all" data-filter="design">Diseño UI/UX</button>
+                <button class="filter-btn px-4 py-2 rounded-full border border-slate-300 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-red-600 hover:text-white hover:border-red-600 transition-all" data-filter="wordpress">WordPress</button>
             </div>
 
             <div id="posts-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -92,7 +101,7 @@
         </section>
     </main>
 
-    <footer class="bg-slate-800 py-12 border-t border-slate-700 text-center text-slate-400">
+    <footer class="bg-white dark:bg-slate-800 py-12 border-t border-slate-200 dark:border-slate-700 text-center text-slate-500 dark:text-slate-400">
         <div class="container mx-auto px-4">
             <p>&copy; 2025 Enrique Contreras. Todos los derechos reservados.</p>
         </div>

@@ -59,9 +59,9 @@
   }
 }
 
-/* Prose styling for blog content */
+/* Prose styling for blog content - Light Mode */
 .prose h2 {
-  color: #f1f5f9;
+  color: #1e293b;
   font-size: 1.875rem;
   font-weight: 700;
   margin-top: 3rem;
@@ -69,7 +69,7 @@
 }
 
 .prose h3 {
-  color: #f1f5f9;
+  color: #334155;
   font-size: 1.5rem;
   font-weight: 600;
   margin-top: 2rem;
@@ -92,12 +92,12 @@
 }
 
 .prose strong {
-  color: #f1f5f9;
+  color: #0f172a;
   font-weight: 600;
 }
 
 .prose code {
-  background-color: #1e293b;
+  background-color: #f1f5f9;
   padding: 0.25rem 0.5rem;
   border-radius: 0.25rem;
   font-size: 0.875rem;
@@ -108,6 +108,28 @@
   border-left: 4px solid #ef4444;
   padding-left: 1.5rem;
   font-style: italic;
-  color: #f1f5f9;
+  color: #475569;
   margin: 2rem 0;
 }
+
+/* Prose styling for blog content - Dark Mode */
+.dark .prose h2 {
+  color: #f1f5f9;
+}
+
+.dark .prose h3 {
+  color: #f1f5f9;
+}
+
+.dark .prose strong {
+  color: #f1f5f9;
+}
+
+.dark .prose code {
+  background-color: #1e293b;
+}
+
+.dark .prose blockquote {
+  color: #f1f5f9;
+}
+
