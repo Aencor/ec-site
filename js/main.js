@@ -5,10 +5,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (mobileMenuToggle && mainNav) {
         mobileMenuToggle.addEventListener('click', () => {
-            mainNav.classList.toggle('active');
-            const isExpanded = mainNav.classList.contains('active');
+            mainNav.classList.toggle('hidden');
+            const isExpanded = !mainNav.classList.contains('hidden');
             mobileMenuToggle.setAttribute('aria-expanded', isExpanded);
-            mobileMenuToggle.textContent = isExpanded ? '✕' : '☰';
+
+            const icon = mobileMenuToggle.querySelector('i');
+            if (isExpanded) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            } else {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            }
         });
     }
 
@@ -22,9 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetElement = document.querySelector(targetId);
             if (targetElement) {
                 // Close mobile menu if open
-                if (mainNav.classList.contains('active')) {
-                    mainNav.classList.remove('active');
-                    mobileMenuToggle.textContent = '☰';
+                if (!mainNav.classList.contains('hidden')) {
+                    mainNav.classList.add('hidden');
+                    const icon = mobileMenuToggle.querySelector('i');
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
                 }
 
                 targetElement.scrollIntoView({
