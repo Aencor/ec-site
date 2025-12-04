@@ -222,85 +222,113 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Contact Section Animation (GSAP)
-    const canvas = document.getElementById('contact-canvas');
-    if (canvas) {
-        const ctx = canvas.getContext('2d');
-        let width, height;
-        let particles = [];
+    // Contact Section Animation (Spiderweb)
+    const spiderwebContainer = document.getElementById('spiderweb-container');
+    if (spiderwebContainer) {
+        function createSpiderweb() {
+            spiderwebContainer.innerHTML = ''; // Clear previous
+            const width = spiderwebContainer.offsetWidth;
+            const height = spiderwebContainer.offsetHeight;
+            const centerX = width / 2;
+            const centerY = height / 2;
+            const maxRadius = Math.max(width, height) * 0.8;
 
-        function resize() {
-            width = canvas.width = canvas.offsetWidth;
-            height = canvas.height = canvas.offsetHeight;
-        }
+            const ns = "http://www.w3.org/2000/svg";
+            const svg = document.createElementNS(ns, "svg");
+            svg.setAttribute("width", "100%");
+            svg.setAttribute("height", "100%");
+            svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+            svg.style.overflow = "visible";
 
-        function createParticles() {
-            particles = [];
-            const numParticles = 50;
-            for (let i = 0; i < numParticles; i++) {
-                particles.push({
-                    x: Math.random() * width,
-                    y: Math.random() * height,
-                    radius: Math.random() * 2 + 1,
-                    vx: (Math.random() - 0.5) * 0.5,
-                    vy: (Math.random() - 0.5) * 0.5,
-                    color: localStorage.theme === 'dark' ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)'
-                });
+            const color = localStorage.theme === 'dark' ? '#ffffff' : '#000000';
+
+            // Create Radial Lines
+            const numRadials = 12;
+            for (let i = 0; i < numRadials; i++) {
+                const angle = (Math.PI * 2 * i) / numRadials;
+                const x2 = centerX + Math.cos(angle) * maxRadius;
+                const y2 = centerY + Math.sin(angle) * maxRadius;
+
+                const line = document.createElementNS(ns, "line");
+                line.setAttribute("x1", centerX);
+                line.setAttribute("y1", centerY);
+                line.setAttribute("x2", x2);
+                line.setAttribute("y2", y2);
+                line.setAttribute("stroke", color);
+                line.setAttribute("stroke-width", "2.5");
+                line.classList.add("web-line");
+                svg.appendChild(line);
             }
-        }
 
-        function animate() {
-            ctx.clearRect(0, 0, width, height);
+            // Create Concentric Polygons
+            const numRings = 10;
+            for (let i = 1; i <= numRings; i++) {
+                const radius = (maxRadius / numRings) * i;
+                let points = "";
 
-            particles.forEach(p => {
-                p.x += p.vx;
-                p.y += p.vy;
+                for (let j = 0; j < numRadials; j++) {
+                    const angle = (Math.PI * 2 * j) / numRadials;
+                    const x = centerX + Math.cos(angle) * radius;
+                    const y = centerY + Math.sin(angle) * radius;
+                    points += `${x},${y} `;
+                }
+                // Close the loop
+                const angle = 0;
+                const x = centerX + Math.cos(angle) * radius;
+                const y = centerY + Math.sin(angle) * radius;
+                points += `${x},${y}`;
 
-                if (p.x < 0) p.x = width;
-                if (p.x > width) p.x = 0;
-                if (p.y < 0) p.y = height;
-                if (p.y > height) p.y = 0;
+                const polygon = document.createElementNS(ns, "polyline");
+                polygon.setAttribute("points", points);
+                polygon.setAttribute("fill", "none");
+                polygon.setAttribute("stroke", color);
+                polygon.setAttribute("stroke-width", "2.5");
+                polygon.classList.add("web-line");
+                svg.appendChild(polygon);
+            }
 
-                ctx.beginPath();
-                ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-                ctx.fillStyle = p.color;
-                ctx.fill();
+            spiderwebContainer.appendChild(svg);
+
+            // Animate
+            const lines = svg.querySelectorAll('.web-line');
+
+            // Set initial state for drawSVG effect
+            lines.forEach(line => {
+                const length = line.getTotalLength();
+                line.style.strokeDasharray = length;
+                line.style.strokeDashoffset = length;
             });
 
-            // Connect particles
-            particles.forEach((p1, i) => {
-                particles.slice(i + 1).forEach(p2 => {
-                    const dx = p1.x - p2.x;
-                    const dy = p1.y - p2.y;
-                    const dist = Math.sqrt(dx * dx + dy * dy);
-
-                    if (dist < 100) {
-                        ctx.beginPath();
-                        ctx.strokeStyle = p1.color;
-                        ctx.lineWidth = 0.5;
-                        ctx.moveTo(p1.x, p1.y);
-                        ctx.lineTo(p2.x, p2.y);
-                        ctx.stroke();
-                    }
-                });
+            gsap.to(lines, {
+                strokeDashoffset: 0,
+                duration: 2,
+                stagger: {
+                    amount: 1.5,
+                    from: "center"
+                },
+                ease: "power2.out",
+                scrollTrigger: {
+                    trigger: "#contact",
+                    start: "top 80%",
+                }
             });
-
-            requestAnimationFrame(animate);
         }
 
+        // Re-create on resize
+        let resizeTimeout;
         window.addEventListener('resize', () => {
-            resize();
-            createParticles();
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(createSpiderweb, 200);
         });
 
-        // Update particle color on theme change
+        // Re-create on theme change
         const observer = new MutationObserver(() => {
-            createParticles();
+            createSpiderweb();
         });
         observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
 
-        resize();
-        createParticles();
-        animate();
+        // Initial create
+        // Wait a bit for layout to settle
+        setTimeout(createSpiderweb, 100);
     }
 });
