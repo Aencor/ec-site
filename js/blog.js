@@ -2,14 +2,14 @@
 const postsData = [
   {
     "id": 1,
-    "title": "Cómo optimizar el rendimiento web en 2024",
-    "slug": "optimizar-rendimiento-web-2024",
+    "title": "Cómo optimizar el rendimiento web en 2025",
+    "slug": "optimizar-rendimiento-web-2025",
     "excerpt": "Descubre las mejores prácticas para hacer que tu sitio web cargue más rápido y ofrezca una mejor experiencia de usuario.",
     "content": "<p>El rendimiento web es crucial para el éxito de cualquier sitio. Los usuarios esperan que las páginas carguen en menos de 3 segundos, y Google penaliza los sitios lentos en sus rankings. Un sitio lento no solo afecta la experiencia del usuario, sino que también impacta directamente en las conversiones y el posicionamiento SEO.</p><h2>Core Web Vitals: Las Métricas que Importan</h2><p>Los Core Web Vitals son métricas esenciales que Google utiliza para evaluar la experiencia del usuario. Estas métricas se han convertido en factores de ranking desde 2021:</p><ul><li><strong>LCP (Largest Contentful Paint):</strong> Mide el tiempo que tarda en renderizarse el elemento más grande visible. Debe ocurrir en menos de 2.5 segundos para una buena experiencia.</li><li><strong>FID (First Input Delay):</strong> Mide el tiempo desde que el usuario interactúa con la página hasta que el navegador responde. Debe ser menor a 100ms.</li><li><strong>CLS (Cumulative Layout Shift):</strong> Mide la estabilidad visual de la página. Debe ser menor a 0.1 para evitar cambios inesperados en el layout.</li></ul><h2>Optimización de Imágenes</h2><p>Las imágenes suelen ser el recurso más pesado de una página web. Usa formatos modernos como WebP (30% más ligero que JPEG) y AVIF (50% más ligero). Implementa responsive images con el atributo <code>srcset</code> y el elemento <code>&lt;picture&gt;</code> para servir diferentes tamaños según el dispositivo.</p><p>El lazy loading nativo con <code>loading=\"lazy\"</code> permite cargar imágenes solo cuando están a punto de entrar en el viewport, reduciendo significativamente el tiempo de carga inicial.</p><h3>Minificación y Compresión</h3><p>Elimina código innecesario, comprime archivos con Gzip o Brotli (20-30% mejor compresión que Gzip), y utiliza tree-shaking para remover JavaScript no utilizado. Herramientas como Webpack, Vite o Parcel automatizan este proceso.</p><h3>Estrategias de Caché</h3><p>Configura headers de caché apropiados para recursos estáticos. Usa <code>Cache-Control: max-age=31536000</code> para assets versionados y <code>stale-while-revalidate</code> para contenido que cambia ocasionalmente.</p><h2>Herramientas de Medición</h2><p>Utiliza Google PageSpeed Insights, Lighthouse, y WebPageTest para medir y monitorear el rendimiento. Establece un presupuesto de rendimiento y configura alertas cuando se exceda.</p>",
     "image": "blog-1.png",
     "category": "web",
     "categoryName": "Desarrollo Web",
-    "date": "2024-10-02",
+    "date": "2025-10-02",
     "author": "Enrique Contreras",
     "tags": ["Performance", "Core Web Vitals", "Optimización", "SEO"],
     "readingTime": 4
@@ -23,7 +23,7 @@ const postsData = [
     "image": "blog-2.png",
     "category": "design",
     "categoryName": "Diseño UI/UX",
-    "date": "2024-09-25",
+    "date": "2025-09-25",
     "author": "Enrique Contreras",
     "tags": ["Diseño", "Minimalismo", "UI/UX", "Tendencias"],
     "readingTime": 3
@@ -37,7 +37,7 @@ const postsData = [
     "image": "blog-3.png",
     "category": "wordpress",
     "categoryName": "WordPress",
-    "date": "2024-09-10",
+    "date": "2025-09-10",
     "author": "Enrique Contreras",
     "tags": ["WordPress", "Temas", "PHP", "Desarrollo"],
     "readingTime": 5
@@ -51,7 +51,7 @@ const postsData = [
     "image": "blog-4.jpg",
     "category": "design",
     "categoryName": "Diseño UI/UX",
-    "date": "2024-11-15",
+    "date": "2025-11-15",
     "author": "Enrique Contreras",
     "tags": ["Responsive", "Mobile-First", "CSS", "Diseño"],
     "readingTime": 4
@@ -65,7 +65,7 @@ const postsData = [
     "image": "blog-5.jpg",
     "category": "web",
     "categoryName": "Desarrollo Web",
-    "date": "2024-11-08",
+    "date": "2025-11-08",
     "author": "Enrique Contreras",
     "tags": ["IA", "Chatbots", "Automatización", "UX"],
     "readingTime": 4
@@ -79,7 +79,7 @@ const postsData = [
     "image": "blog-6.jpg",
     "category": "web",
     "categoryName": "Desarrollo Web",
-    "date": "2024-11-01",
+    "date": "2025-11-01",
     "author": "Enrique Contreras",
     "tags": ["PageSpeed", "Performance", "SEO", "Optimización"],
     "readingTime": 5
@@ -93,7 +93,7 @@ const postsData = [
     "image": "blog-7.jpg",
     "category": "design",
     "categoryName": "Diseño UI/UX",
-    "date": "2024-10-22",
+    "date": "2025-10-22",
     "author": "Enrique Contreras",
     "tags": ["UX", "Diseño", "Usabilidad", "Principios"],
     "readingTime": 4
@@ -107,7 +107,7 @@ const postsData = [
     "image": "blog-8.jpg",
     "category": "wordpress",
     "categoryName": "WordPress",
-    "date": "2024-10-18",
+    "date": "2025-10-18",
     "author": "Enrique Contreras",
     "tags": ["WordPress", "SEO", "Plugins", "Optimización"],
     "readingTime": 5
@@ -121,23 +121,23 @@ const postsData = [
     "image": "blog-9.jpg",
     "category": "web",
     "categoryName": "Desarrollo Web",
-    "date": "2024-10-05",
+    "date": "2025-10-05",
     "author": "Enrique Contreras",
     "tags": ["Seguridad", "HTTPS", "WordPress", "Protección"],
     "readingTime": 6
   },
   {
     "id": 10,
-    "title": "JavaScript Moderno: ES2024 y Nuevas Características",
-    "slug": "javascript-moderno-es2024",
+    "title": "JavaScript Moderno: ES2025 y Nuevas Características",
+    "slug": "javascript-moderno-es2025",
     "excerpt": "Explora las últimas funcionalidades de JavaScript y cómo pueden mejorar tu código.",
-    "content": "<p>JavaScript continúa evolucionando a un ritmo impresionante con nuevas características que hacen el código más limpio, eficiente y expresivo. ES2024 trae mejoras significativas que todo desarrollador frontend debe conocer. Estas características no solo mejoran la productividad, sino que también hacen el código más mantenible y menos propenso a errores.</p><h2>Temporal API: Adiós a Date</h2><p>El objeto Date de JavaScript ha sido problemático desde siempre - mutable, confuso con zonas horarias, y con una API inconsistente. Temporal API es su reemplazo moderno:</p><pre><code>// Antes con Date\nconst now = new Date();\n\n// Ahora con Temporal\nconst now = Temporal.Now.plainDateTimeISO();\nconst tomorrow = now.add({ days: 1 });\nconst formatted = tomorrow.toLocaleString();</code></pre><p>Temporal es inmutable, maneja zonas horarias correctamente, y tiene una API intuitiva. Soporta diferentes calendarios y sistemas de tiempo.</p><h2>Pattern Matching: Expresividad Mejorada</h2><p>Pattern matching permite escribir código más declarativo y legible, similar a switch pero mucho más poderoso:</p><pre><code>const result = match (value) {\n  when ({ type: 'circle', radius: r }) -> Math.PI * r * r,\n  when ({ type: 'rectangle', width: w, height: h }) -> w * h,\n  when ({ type: 'triangle', base: b, height: h }) -> 0.5 * b * h,\n  else -> 0\n};</code></pre><p>Esto es más conciso y menos propenso a errores que múltiples if/else o switch statements.</p><h2>Records y Tuples: Inmutabilidad Nativa</h2><p>Estructuras de datos inmutables nativas que se comparan por valor, no por referencia:</p><pre><code>// Record (objeto inmutable)\nconst user = #{\n  name: 'Ana',\n  age: 28\n};\n\n// Tuple (array inmutable)\nconst coords = #[40.7128, -74.0060];\n\n// Comparación por valor\n#{a: 1} === #{a: 1} // true!</code></pre><p>Esto elimina bugs comunes relacionados con mutación accidental y facilita la programación funcional.</p><h2>Otras Características Destacadas</h2><h3>Array Grouping</h3><p>Agrupa elementos de arrays fácilmente:</p><pre><code>const grouped = array.groupBy(item => item.category);</code></pre><h3>Top-level await</h3><p>Usa await en el nivel superior de módulos sin necesidad de funciones async wrapper:</p><pre><code>const data = await fetch('/api/data').then(r => r.json());</code></pre><h3>Private Fields y Methods</h3><p>Encapsulación real en clases con el prefijo #:</p><pre><code>class User {\n  #password;\n  \n  #validatePassword() {\n    // método privado\n  }\n}</code></pre><h2>Compatibilidad y Transpilación</h2><p>Muchas de estas características aún están en propuesta. Usa Babel para transpilar a JavaScript compatible con navegadores actuales. Consulta caniuse.com para verificar soporte en navegadores antes de usar en producción.</p>",
+    "content": "<p>JavaScript continúa evolucionando a un ritmo impresionante con nuevas características que hacen el código más limpio, eficiente y expresivo. ES2025 trae mejoras significativas que todo desarrollador frontend debe conocer. Estas características no solo mejoran la productividad, sino que también hacen el código más mantenible y menos propenso a errores.</p><h2>Temporal API: Adiós a Date</h2><p>El objeto Date de JavaScript ha sido problemático desde siempre - mutable, confuso con zonas horarias, y con una API inconsistente. Temporal API es su reemplazo moderno:</p><pre><code>// Antes con Date\\nconst now = new Date();\\n\\n// Ahora con Temporal\\nconst now = Temporal.Now.plainDateTimeISO();\\nconst tomorrow = now.add({ days: 1 });\\nconst formatted = tomorrow.toLocaleString();</code></pre><p>Temporal es inmutable, maneja zonas horarias correctamente, y tiene una API intuitiva. Soporta diferentes calendarios y sistemas de tiempo.</p><h2>Pattern Matching: Expresividad Mejorada</h2><p>Pattern matching permite escribir código más declarativo y legible, similar a switch pero mucho más poderoso:</p><pre><code>const result = match (value) {\\n  when ({ type: 'circle', radius: r }) -> Math.PI * r * r,\\n  when ({ type: 'rectangle', width: w, height: h }) -> w * h,\\n  when ({ type: 'triangle', base: b, height: h }) -> 0.5 * b * h,\\n  else -> 0\\n};</code></pre><p>Esto es más conciso y menos propenso a errores que múltiples if/else o switch statements.</p><h2>Records y Tuples: Inmutabilidad Nativa</h2><p>Estructuras de datos inmutables nativas que se comparan por valor, no por referencia:</p><pre><code>// Record (objeto inmutable)\\nconst user = #{\\n  name: 'Ana',\\n  age: 28\\n};\\n\\n// Tuple (array inmutable)\\nconst coords = #[40.7128, -74.0060];\\n\\n// Comparación por valor\\n#{a: 1} === #{a: 1} // true!</code></pre><p>Esto elimina bugs comunes relacionados con mutación accidental y facilita la programación funcional.</p><h2>Otras Características Destacadas</h2><h3>Array Grouping</h3><p>Agrupa elementos de arrays fácilmente:</p><pre><code>const grouped = array.groupBy(item => item.category);</code></pre><h3>Top-level await</h3><p>Usa await en el nivel superior de módulos sin necesidad de funciones async wrapper:</p><pre><code>const data = await fetch('/api/data').then(r => r.json());</code></pre><h3>Private Fields y Methods</h3><p>Encapsulación real en clases con el prefijo #:</p><pre><code>class User {\\n  #password;\\n  \\n  #validatePassword() {\\n    // método privado\\n  }\\n}</code></pre><h2>Compatibilidad y Transpilación</h2><p>Muchas de estas características aún están en propuesta. Usa Babel para transpilar a JavaScript compatible con navegadores actuales. Consulta caniuse.com para verificar soporte en navegadores antes de usar en producción.</p>",
     "image": "blog-10.svg",
     "category": "web",
     "categoryName": "Desarrollo Web",
-    "date": "2024-09-28",
+    "date": "2025-09-28",
     "author": "Enrique Contreras",
-    "tags": ["JavaScript", "ES2024", "Desarrollo", "Frontend"],
+    "tags": ["JavaScript", "ES2025", "Desarrollo", "Frontend"],
     "readingTime": 5
   }
 ];

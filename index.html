@@ -394,7 +394,7 @@
                     Déjame un mensaje y creemos algo <span class="text-red-500 font-semibold">extraordinario</span> juntos.
                 </p>
                 <div class="max-w-2xl mx-auto">
-                    <form class="bg-white dark:bg-slate-800 p-10 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-2xl" action="#" method="POST">
+                    <form id="contact-form" class="bg-white dark:bg-slate-800 p-10 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-2xl">
                         <div class="mb-8">
                             <label for="name" class="block mb-3 font-bold text-lg">Nombre</label>
                             <input type="text" id="name" name="name" required class="w-full px-6 py-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/50 transition-all">
@@ -407,8 +407,29 @@
                             <label for="message" class="block mb-3 font-bold text-lg">Mensaje</label>
                             <textarea id="message" name="message" rows="5" required class="w-full px-6 py-4 bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white focus:outline-none focus:border-red-500 focus:ring-2 focus:ring-red-500/50 transition-all"></textarea>
                         </div>
-                        <button type="submit" class="w-full py-4 bg-red-600 hover:bg-red-700 text-white font-bold text-xl rounded-lg transition-all shadow-lg hover:shadow-red-500/30 transform hover:-translate-y-1">Enviar Mensaje</button>
+                        <button type="submit" class="w-full py-4 bg-red-600 hover:bg-red-700 text-white font-bold text-xl rounded-lg transition-all shadow-lg hover:shadow-red-500/30 transform hover:-translate-y-1">
+                            <i class="fa-brands fa-whatsapp mr-2"></i>Enviar por WhatsApp
+                        </button>
                     </form>
+                    
+                    <script>
+                        document.getElementById('contact-form').addEventListener('submit', function(e) {
+                            e.preventDefault();
+                            
+                            const name = document.getElementById('name').value;
+                            const email = document.getElementById('email').value;
+                            const message = document.getElementById('message').value;
+                            
+                            const whatsappMessage = `*Nuevo mensaje desde el portafolio*%0A%0A*Nombre:* ${encodeURIComponent(name)}%0A*Email:* ${encodeURIComponent(email)}%0A*Mensaje:* ${encodeURIComponent(message)}`;
+                            
+                            const whatsappURL = `https://wa.me/525619956812?text=${whatsappMessage}`;
+                            
+                            window.open(whatsappURL, '_blank');
+                            
+                            // Reset form
+                            this.reset();
+                        });
+                    </script>
                 </div>
             </div>
         </section>
@@ -430,7 +451,7 @@
                     <i class="fa-brands fa-instagram text-3xl"></i>
                 </a>
             </div>
-            <p class="text-lg">&copy; 2024 Enrique Contreras. Todos los derechos reservados.</p>
+            <p class="text-lg">&copy; 2025 Enrique Contreras. Todos los derechos reservados.</p>
         </div>
     </footer>
 
